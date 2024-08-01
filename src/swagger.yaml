@@ -5,6 +5,7 @@ info:
   description: API documentation for your backend project
 servers:
   - url: http://localhost:5000
+  - url: https://backend-ns20.onrender.com/
 components:
   securitySchemes:
     bearerAuth:
