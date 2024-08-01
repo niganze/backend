@@ -9,6 +9,7 @@ import connectDB from './config/db.js';
 import schoolRoutes from './src/routes/schoolRoutes.js';
 import projectRoutes from './src/routes/projectRoutes.js';
 import authRouter from './src/routes/authendspoints.js';
+import swaggerDocs from './src/swaggerOptions.js'; // Import the Swagger setup
 
 dotenv.config();
 
@@ -49,6 +50,9 @@ app.post('/upload', upload.single('project_file'), (req, res) => {
   // File upload successful, req.file contains information about the uploaded file
   res.json({ message: 'File uploaded successfully', file: req.file });
 });
+
+// Setup Swagger
+swaggerDocs(app);
 
 const PORT = process.env.PORT || 5000;
 
